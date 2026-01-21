@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layout</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container{
+            display: grid;
+            grid-template-areas: 
+                "mantel mantel mantel"
+                "p1 . p2";            
+            grid-template-columns: 1fr 2fr 1fr;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .p1{
+            grid-area: p1;
+            background: blue;
+        }
+
+        .p2{
+            grid-area: p2;
+            background: green;
+        }
+
+        .mantel{
+            grid-area: mantel;
+            background: red;
+
+        }
+
+        .container2{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-areas: 
+                ". servilleta1 . . ."
+                "plato1 vaso1 . . servilleta2"
+                ". . . . ."
+                ". . . vaso2 plato2"
+                ;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        .servilleta1{
+            grid-area: servilleta1;
+            background: pink;
+        }
+
+        .vaso1{
+            grid-area: vaso1;
+            border: 15px blue solid;
+        }
+
+        .plato1{
+            grid-area: plato1;
+            background: grey;
+            border-radius: 100%;
+        }
+        
+        .servilleta2{
+            grid-area: servilleta2;
+            background: purple;
+        }
+
+        .vaso2{
+            grid-area: vaso2;
+            border: 15px blue solid;
+        }
+
+        .plato2{
+            grid-area: plato2;
+            background: whitesmoke;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mantel">
+            <div class="container2">
+                <div class="servilleta1"></div>
+                <div class="vaso1"></div>
+                <div class="plato1"></div>
+                <div class="servilleta2"></div>
+                <div class="plato2"></div>
+                <div class="vaso2"></div></div>
+        </div>
+        <div class="p1"></div>
+        <div class="p2"></div>
+    </div>
+    
+</body>
+</html>
